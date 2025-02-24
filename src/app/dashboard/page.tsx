@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { ErrorBoundary, Loading, MetricsChart, StatusCards } from "@/components";
+import { DataGrid, ErrorBoundary, Loading, MetricsChart, StatusCards } from "@/components";
 
 export default function Dashboard() {
   return (
@@ -8,6 +8,7 @@ export default function Dashboard() {
         <Suspense fallback={<Loading />}>
           <StatusCards />
           <MetricsChart />
+          <DataGrid />
         </Suspense>
       </ErrorBoundary>
     </div>
