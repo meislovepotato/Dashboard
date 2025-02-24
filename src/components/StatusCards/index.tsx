@@ -2,6 +2,7 @@
 import useSWR from "swr";
 import { fetchStatus, StatusUpdate } from "@/api/mock-data";
 import { Card, CardContent } from "./components";
+import { Loading } from "@/components";
 
 export default function StatusCards() {
   const { data, error, isLoading } = useSWR<StatusUpdate[]>(
@@ -12,7 +13,7 @@ export default function StatusCards() {
     }
   );
 
-  if (isLoading) return <p>Loading status...</p>;
+  if (isLoading) return <Loading />;
   if (error) return <p>Error loading status.</p>;
 
   return (

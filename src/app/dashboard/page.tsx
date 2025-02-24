@@ -1,12 +1,13 @@
 import { Suspense } from "react";
-import { ErrorBoundary, StatusCards } from "@/components";
+import { ErrorBoundary, Loading, MetricsChart, StatusCards } from "@/components";
 
 export default function Dashboard() {
   return (
-    <div className="dashboard-layout">
+    <div  className="dashboard-layout">
       <ErrorBoundary>
-        <Suspense>
-            <StatusCards />
+        <Suspense fallback={<Loading />}>
+          <StatusCards />
+          <MetricsChart />
         </Suspense>
       </ErrorBoundary>
     </div>
